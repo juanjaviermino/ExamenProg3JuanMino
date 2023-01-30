@@ -1,4 +1,6 @@
 using ExamenProg3JuanMino.Models;
+using ExamenProg3JuanMino.ViewModel;
+
 namespace ExamenProg3JuanMino.Views;
 
 [QueryProperty(nameof(ItemId), nameof(ItemId))]
@@ -16,7 +18,7 @@ public partial class NewImagePage : ContentPage
     public NewImagePage()
 	{
 		InitializeComponent();
-	}
+    }
 
     private async void guardarImg(object sender, EventArgs e)
     {
@@ -61,6 +63,7 @@ public partial class NewImagePage : ContentPage
         i = App.Repositorio.GetById(id);
         aux = i;
         BindingContext = i;
+
     }
 
     private void Cancelar(object sender, EventArgs e)

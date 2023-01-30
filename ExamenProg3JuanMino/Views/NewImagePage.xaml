@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExamenProg3JuanMino.Views.NewImagePage"
              Title="NewImagePage"
-             xmlns:models="clr-namespace:ExamenProg3JuanMino.Models">
+             xmlns:models="clr-namespace:ExamenProg3JuanMino.Models"
+             xmlns:viewmodels="clr-namespace:ExamenProg3JuanMino.ViewModel">
     <Grid ColumnDefinitions="*" RowDefinitions="50,*">
         <BoxView
             Grid.Row="0"
@@ -71,6 +72,10 @@
                 x:Name="tecJM"
                 Placeholder="Ej. Óleo"
                 Text="{Binding TecnicaJM}"
+                />
+            <Label
+                x:Name="Hora"
+                Text="{Binding HoraActual}"
                 />
             <Label
                 Text="Imagen generada:"

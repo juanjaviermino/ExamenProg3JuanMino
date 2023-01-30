@@ -14,7 +14,7 @@ namespace ExamenProg3JuanMino.Services
             {
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Authorization =
-                    new AuthenticationHeaderValue("Bearer", "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");
+                    new AuthenticationHeaderValue("Bearer", "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");
 
                 var Message = await client.PostAsync("https://api.openai.com/v1/images/generations",
                     new StringContent(JsonConvert.SerializeObject(input),
