@@ -49,7 +49,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Services\" />
+	  <None Remove="Resources\Fonts\Roboto-Bold.ttf" />
+	  <None Remove="Resources\Fonts\Roboto-Light.ttf" />
+	  <None Remove="Resources\Fonts\Roboto-Regular.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Folder Include="ViewModel\" />
 	</ItemGroup>
 

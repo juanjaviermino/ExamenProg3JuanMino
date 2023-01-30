@@ -2,11 +2,82 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExamenProg3JuanMino.Views.GaleriaPage"
+             xmlns:models="clr-namespace:ExamenProg3JuanMino.Models"
              Title="GaleriaPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="50,*,50">
+        <BoxView
+            Grid.Row="0"
+            Color="Navy"
+            CornerRadius="0,0,5,5"
+            />
+        <Label
+            Text="GALERIA"
+            TextColor="White"
+            FontAttributes="Bold"
+            VerticalOptions="Center"
+            Grid.Row="0"
+            HorizontalOptions="Center"
+            FontSize="20"
+            />
+        <CollectionView x:Name="listaImg"
+                        ItemsSource="{Binding Imagen}"
+                        Margin="20"
+                        SelectionMode="Single"
+                        SelectionChanged="Collection_SelectionChanged"
+                        Grid.Row="1">
+
+            <!-- Designate how the collection of items are laid out -->
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="30" />
+            </CollectionView.ItemsLayout>
+
+            <!-- Define the appearance of each item in the list -->
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Imagen">
+                    <StackLayout>
+                        <Image Source="{Binding ImgJM}" Aspect="AspectFill" HeightRequest="250" />
+                        <BoxView Color="White" HeightRequest="10"/>
+                        <VerticalStackLayout>
+                            <StackLayout Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+                                <Label 
+                                        Text="{Binding TituloJM}"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Start"
+                                        FontSize="30"
+                                        FontFamily="Bold"
+                                        Padding="0"/>
+                                <Label 
+                                        Text="{Binding FechaJM}"
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="Start"
+                                        FontFamily="Roboto-Light"
+                                        FontSize="10"/>
+                            </StackLayout>
+                            <BoxView Color="White" HeightRequest="10"/>
+                            <HorizontalStackLayout Grid.Column="0" Grid.Row="1">
+                                <Label Text="Tecnica: " FontAttributes="Bold"/>
+                                <Label 
+                                        Text="{Binding TecnicaJM}"
+                                        Grid.Column="1"
+                                        Grid.Row="0"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                        <Label Text="Descripción:" FontAttributes="Bold"/>
+                        <Label Text="{Binding DescripcionJM}" />
+                        <BoxView Color="White" HeightRequest="10"/>
+                        <BoxView Color="#808080" HeightRequest="1"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button 
+            Grid.Row="2"
+            WidthRequest="150"
+            HeightRequest="40"
+            CornerRadius="20"
+            HorizontalOptions="Center"
+            Text="Nueva Imagen"
+            Clicked="GoToNewImagePage"
+                />
+    </Grid>
 </ContentPage>

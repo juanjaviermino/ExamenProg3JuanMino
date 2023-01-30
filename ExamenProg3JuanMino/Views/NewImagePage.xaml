@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExamenProg3JuanMino.Views.NewImagePage"
              Title="NewImagePage">
-    <Grid ColumnDefinitions="*" RowDefinitions="50,*,50">
+    <Grid ColumnDefinitions="*" RowDefinitions="50,*">
         <BoxView
             Grid.Row="0"
             Color="Navy"
@@ -31,11 +31,23 @@
                 FontAttributes="Bold"
                 Margin="10"
                 />
-            <Entry
-                Margin="10"
-                x:Name="descJM"
-                Placeholder="Ej. Pulpo jugando basketball"
-                />
+            <Grid ColumnDefinitions="*,100">
+                <Entry
+                    Grid.Column="0"
+                    Margin="10"
+                    x:Name="descJM"
+                    Placeholder="Ej. Pulpo jugando basketball"
+                    />
+                <Button 
+                    Grid.Column="1"
+                    WidthRequest="100"
+                    HeightRequest="40"
+                    Text="Generar"
+                    CornerRadius="20"
+                    Clicked="generarImg"
+                    HorizontalOptions="Center"
+                    />
+            </Grid>
             <Label
                 Text="Ingresa el titulo de tu obra:"
                 FontAttributes="Bold"
@@ -71,9 +83,9 @@
                 Color="White"
                 HeightRequest="50"
                 />
-            <Grid ColumnDefinitions="*,*">
+            <Grid ColumnDefinitions="*,*,*">
                 <Button
-                    Grid.Column="1"
+                    Grid.Column="2"
                     WidthRequest="100"
                     HeightRequest="40"
                     Text="Guardar"
@@ -82,7 +94,7 @@
                     HorizontalOptions="Center"
                 />
                 <Button
-                    Grid.Column="0"
+                    Grid.Column="1"
                     WidthRequest="100"
                     HeightRequest="40"
                     Text="Eliminar"
@@ -91,6 +103,19 @@
                     HorizontalOptions="Center"
                     BackgroundColor="Red"
                 />
+                <Button
+                    Grid.Column="0"
+                    WidthRequest="100"
+                    HeightRequest="40"
+                    Text="Cancelar"
+                    CornerRadius="20"
+                    Clicked="Cancelar"
+                    BorderWidth="1"
+                    BackgroundColor="White"
+                    BorderColor="Navy"
+                    TextColor="Navy"
+                    HorizontalOptions="Center"
+                    />
             </Grid>
         </VerticalStackLayout>
     </Grid>
