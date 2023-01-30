@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExamenProg3JuanMino.Views.NewImagePage"
-             Title="NewImagePage">
+             Title="NewImagePage"
+             xmlns:models="clr-namespace:ExamenProg3JuanMino.Models">
     <Grid ColumnDefinitions="*" RowDefinitions="50,*">
         <BoxView
             Grid.Row="0"
@@ -37,6 +38,7 @@
                     Margin="10"
                     x:Name="descJM"
                     Placeholder="Ej. Pulpo jugando basketball"
+                    Text="{Binding DescripcionJM}"
                     />
                 <Button 
                     Grid.Column="1"
@@ -57,6 +59,7 @@
                 Margin="10"
                 x:Name="titJM"
                 Placeholder="Ej. El pulpo jugador"
+                Text="{Binding TituloJM}"
                 />
             <Label
                 Text="Ingresa la técnica utilizada"
@@ -67,6 +70,7 @@
                 Margin="10"
                 x:Name="tecJM"
                 Placeholder="Ej. Óleo"
+                Text="{Binding TecnicaJM}"
                 />
             <Label
                 Text="Imagen generada:"
@@ -78,6 +82,7 @@
                 HeightRequest="200"
                 WidthRequest="200"
                 HorizontalOptions="Center"
+                Source="{Binding ImgJM}"
                 />
             <BoxView
                 Color="White"

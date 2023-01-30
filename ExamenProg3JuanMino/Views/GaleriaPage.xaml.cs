@@ -23,10 +23,10 @@ public partial class GaleriaPage : ContentPage
         if (e.CurrentSelection.Count != 0)
         {
             // Get the note model
-            var Imagen = (Models.Imagen)e.CurrentSelection[0];
+            var imm = (Models.Imagen)e.CurrentSelection[0];
 
             // Should navigate to "NotePage?ItemId=path\on\device\XYZ.notes.txt"
-            await Shell.Current.GoToAsync($"{nameof(NewImagePage)}?{nameof(NewImagePage.ItemId)}={Imagen.IdJM}");
+            await Shell.Current.GoToAsync($"{nameof(NewImagePage)}?{nameof(NewImagePage.ItemId)}={imm.IdJM}");
 
             // Unselect the UI
             listaImg.SelectedItem = null;
